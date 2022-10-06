@@ -18,7 +18,7 @@
         }
         /* Au cas où la clé existe et contient quelque chose, on affiche nos produits dans un tableau HTML */
         else{
-            echo "<table class='table-striped'>",
+            echo "<table class='table table-bordered table-dark'>",
                 "<thead>",
                     "<tr>",
                         "<th>#</th>",
@@ -28,7 +28,7 @@
                         "<th>Total</th>",
                     "</tr>",
                 "</thead>",
-                "<tbody>";
+                "<tbody class='table-group-divider'>";
             $totalGeneral = 0;
             /* Pour chaque element product du tableau products */
             foreach($_SESSION['products'] as $index => $product){
