@@ -18,7 +18,7 @@
         }
         /* Au cas où la clé existe et contient quelque chose, on affiche nos produits dans un tableau HTML */
         else{
-            echo "<table class='table'>",
+            echo "<table class='table-striped'>",
                 "<thead>",
                     "<tr>",
                         "<th>#</th>",
