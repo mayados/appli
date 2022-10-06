@@ -42,7 +42,7 @@
                 $totalGeneral += $product['total'];
             }
             echo    "<tr>",
-                        /* Cellule fusionnée de 4 cellules */
+                        /* Cellule fusionnée de 4 cellules = l'affichage des mots "total général" prend 4 celulles sur 5 */
                         "<td colspan=4>Total général : </td>",
                         /* &nbsp; est un espace insécable */
                         "<td><strong>".number_format($totalGeneral, 2, ",", "&nbsp;")."&nbsp;€</strong></td>",
