@@ -4,37 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
     <title>Ajout produit</title>
 </head>
 <body>
     
+    <div id="container-page">
     <h1>Ajouter un nouveau produit</h1>
-    <form action="traitement.php" method="post">
-        <p>
-            <label>
-                Nom du produit :
-                <input type="text" name="name">
-            </label>
-        </p>
-        <p>
-            <label>
-                Prix du produit :
-                <input type="number" step="any" name="price">
-            </label>
-        </p>
-        <p>
-            <label>
-                Quantité désirée :
-                <input type="number" name="qtt" value="1">
-            </label>
-        </p>
-        <p>
-            <input type="submit" name="submit" value="Ajouter le produit">
-        </p>
-    </form>
+        <section id="formulaire">
+            <form action="traitement.php" method="post">
+                <p>
+                    <label>
+                        <p>Nom du produit :</p>
+                        <input type="text" name="name">
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <p>Prix du produit :</p>
+                        <input type="number" step="any" name="price">
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <p>Quantité désirée :</p>
+                        <input type="number" name="qtt" value="1">
+                    </label>
+                </p>
+                <p>
+                    <input id="ajouter" type="submit" name="submit" value="Ajouter le produit">
+                </p>
+            </form>
+        </section>
 
-    <a href="recap.php">Récapitulatif</a>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+        <a href="recap.php">Récapitulatif</a>
+    </div>
 </body>
 </html>
