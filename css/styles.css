@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@500&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Sansita Swashed', cursive;
 }
 
 
@@ -49,6 +52,10 @@ form input {
     border: none;
     padding: 0 10px;
     background-color: rgb(255, 249, 249);
+}
+
+.label-p {
+    font-size: 1.1rem;
 }
 
                                         /*** BOUTON DU FORMULAIRE ***/
