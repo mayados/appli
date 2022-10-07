@@ -31,10 +31,12 @@
                                     "<th>Prix</th>",
                                     "<th>Quantité</th>",
                                     "<th>Total</th>",
+                                    "<th></th>",
                                 "</tr>",
                             "</thead>",
                             "<tbody>";
                         $totalGeneral = 0;
+                        $nombreProduits = count($_SESSION['products']); 
                         /* Pour chaque element product du tableau products */
                         foreach($_SESSION['products'] as $index => $product){
                             echo "<tr>",
@@ -44,6 +46,7 @@
                                     "<td>".number_format($product['price'], 2, ",", "&nbsp;")."&nbsp;€</td>",
                                     "<td>".$product['qtt']."</td>",
                                     "<td>".number_format($product['total'], 2, ",", "&nbsp;")."&nbsp;€</td>",
+                                    "<td><a href='#'>Supprimer</a></td>",
                                 "</tr>";
                             $totalGeneral += $product['total'];
                         }
@@ -52,6 +55,10 @@
                                     "<td colspan=4 id='total-g'>Total général : </td>",
                                     /* &nbsp; est un espace insécable */
                                     "<td><strong>".number_format($totalGeneral, 2, ",", "&nbsp;")."&nbsp;€</strong></td>",
+                                "</tr>",
+                                "<tr>",
+                                    "<td colspan>Nombre de produits : </td>",
+                                    "<td>".$nombreProduits."</td>",
                                 "</tr>",
                             "</tbody>",
                             "</table>";
