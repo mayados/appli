@@ -7,53 +7,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/recap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="css/recaps.css">
     <title>Récapitulatif des produits</title>
 </head>
 <body>
-    <?php 
-        /* Si la clé "products" du tableau session n'existe pas OU si elle existe mais ne contient auncune donnée, on affiche un message */
-        if(!isset($_SESSION['products']) || empty($_SESSION['products'])){
-            echo "<p> Auncun produit en session...</p>";
-        }
-        /* Au cas où la clé existe et contient quelque chose, on affiche nos produits dans un tableau HTML */
-        else{
-            echo "<table>",
-                "<thead>",
-                    "<tr>",
-                        "<th>#</th>",
-                        "<th>Nom</th>",
-                        "<th>Prix</th>",
-                        "<th>Quantité</th>",
-                        "<th>Total</th>",
-                    "</tr>",
-                "</thead>",
-                "<tbody>";
-            $totalGeneral = 0;
-            /* Pour chaque element product du tableau products */
-            foreach($_SESSION['products'] as $index => $product){
-                echo "<tr>",
-                        "<td>".$index."</td>",
-                        "<td>".$product['name']."</td>",
-                        /* On modifie l'affichage du prix avec number_format */
-                        "<td>".number_format($product['price'], 2, ",", "&nbsp;")."&nbsp;€</td>",
-                        "<td>".$product['qtt']."</td>",
-                        "<td>".number_format($product['total'], 2, ",", "&nbsp;")."&nbsp;€</td>",
-                    "</tr>";
-                $totalGeneral += $product['total'];
-            }
-            echo    "<tr>",
-                        /* Cellule fusionnée de 4 cellules = l'affichage des mots "total général" prend 4 celulles sur 5 */
-                        "<td colspan=4>Total général : </td>",
-                        /* &nbsp; est un espace insécable */
-                        "<td><strong>".number_format($totalGeneral, 2, ",", "&nbsp;")."&nbsp;€</strong></td>",
-                    "</tr>",
-                "</tbody>",
-                "</table>";
-        }
-    ?>
+    <div id="container-page">
+       <div id="tableau">
+        <?php 
+                /* Si la clé "products" du tableau session n'existe pas OU si elle existe mais ne contient auncune donnée, on affiche un message */
+                if(!isset($_SESSION['products']) || empty($_SESSION['products'])){
+                    echo "<p> Auncun produit en session...</p>";
+                }
+                /* Au cas où la clé existe et contient quelque chose, on affiche nos produits dans un tableau HTML */
+                else{
+                    echo "<table id='tableau-recap'>",
+                        "<thead>",
+                            "<tr>",
+                                "<th>#</th>",
+                                "<th>Nom</th>",
+                                "<th>Prix</th>",
+                                "<th>Quantité</th>",
+                                "<th>Total</th>",
+                            "</tr>",
+                        "</thead>",
+                        "<tbody>";
+                    $totalGeneral = 0;
+                    /* Pour chaque element product du tableau products */
+                    foreach($_SESSION['products'] as $index => $product){
+                        echo "<tr>",
+                                "<td>".$index."</td>",
+                                "<td>".$product['name']."</td>",
+                                /* On modifie l'affichage du prix avec number_format */
+                                "<td>".number_format($product['price'], 2, ",", "&nbsp;")."&nbsp;€</td>",
+                                "<td>".$product['qtt']."</td>",
+                                "<td>".number_format($product['total'], 2, ",", "&nbsp;")."&nbsp;€</td>",
+                            "</tr>";
+                        $totalGeneral += $product['total'];
+                    }
+                    echo    "<tr id='general'>",
+                                /* Cellule fusionnée de 4 cellules = l'affichage des mots "total général" prend 4 celulles sur 5 */
+                                "<td colspan=4 id='total-g'>Total général : </td>",
+                                /* &nbsp; est un espace insécable */
+                                "<td><strong>".number_format($totalGeneral, 2, ",", "&nbsp;")."&nbsp;€</strong></td>",
+                            "</tr>",
+                        "</tbody>",
+                        "</table>";
+                }
+            ?>
+       </div>
 
-    <a href="index.php">Index</a>
+        <a id="retour-index" href="index.php">
+            <i class="fa-solid fa-rotate-left"></i>
+            <p>Retour à l'index</p>
+        </a>  
+
+
+    </div>
 
 </body>
 </html>
