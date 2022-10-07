@@ -1,3 +1,8 @@
+
+<?php
+    /* Il faut avoir accès au tableau $_SESSION pour connaître le nombre de produits actuels */
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,6 +38,16 @@
                 </p>
                 <p>
                     <input id="ajouter" type="submit" name="submit" value="Ajouter le produit">
+                </p>
+                <p>
+                    <label>
+                        <p>Nombre de produits actuels : 
+                            <?php
+                                       $nombreProduits = count($_SESSION['products']); 
+                                echo " ".$nombreProduits.""
+                            ?>
+                        </p>
+                    </label>
                 </p>
             </form>
         </section>
