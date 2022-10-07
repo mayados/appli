@@ -36,9 +36,9 @@
                 </p>
             </form>
         </section>
-        <div id="recap">
-            <a href="recap.php">Récapitulatif</a>            
-        </div>
+
+        <a id="recap" href="recap.php">Récapitulatif</a>            
+        
 
     </div>
 </body>
