@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+#container-page {
+    height: 100vh;
+    background-image: url("../img/achats_woman.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+h1 {
+    color: white;
+    text-shadow: 2px 1px 2px black;
+}
+
+form {
+    background-color: rgb(219, 213, 213, 0.5);
+    width: 500px;
+    height: 450px;
+    border-radius: 10px;
+    padding: 20px;    
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+
+form input {
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    padding: 0 10px;
+    background-color: rgb(255, 249, 249);
+}
+
+
+form #ajouter {
+    width: 300px;
+    height: 45px;
+    border-radius: 5px;
+    transition: 0.8s;
+}
+
+form #ajouter:hover {
+    cursor: pointer;
+    background-color: rgb(139, 137, 137);
+    color: white;
+    transform: scale(1.1);
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    transition: 1s;
+}
+
+a:hover {
+    transform: scale(1.2);
+}
+
+#recap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(245, 209, 215);
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+}
