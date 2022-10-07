@@ -15,19 +15,19 @@
             <form action="traitement.php" method="post">
                 <p>
                     <label>
-                        <p>Nom du produit :</p>
+                        <p class="label-p">Nom du produit :</p>
                         <input type="text" name="name">
                     </label>
                 </p>
                 <p>
                     <label>
-                        <p>Prix du produit :</p>
+                        <p class="label-p">Prix du produit :</p>
                         <input type="number" step="any" name="price">
                     </label>
                 </p>
                 <p>
                     <label>
-                        <p>Quantité désirée :</p>
+                        <p class="label-p">Quantité désirée :</p>
                         <input type="number" name="qtt" value="1">
                     </label>
                 </p>
