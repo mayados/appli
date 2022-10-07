@@ -37,8 +37,9 @@
                             "<tbody>";
                         $totalGeneral = 0;
                         $nombreProduits = count($_SESSION['products']); 
-                        /* Pour chaque element product du tableau products */
+                        /* Pour chaque element product du tableau products : products correspond à l'index*/
                         foreach($_SESSION['products'] as $index => $product){
+                            $ref = $index;
                             echo "<tr>",
                                     "<td>".$index."</td>",
                                     "<td>".$product['name']."</td>",
@@ -46,8 +47,10 @@
                                     "<td>".number_format($product['price'], 2, ",", "&nbsp;")."&nbsp;€</td>",
                                     "<td>".$product['qtt']."</td>",
                                     "<td>".number_format($product['total'], 2, ",", "&nbsp;")."&nbsp;€</td>",
-                                    "<td><a href='#'>Supprimer</a></td>",
+                                    /* La référence du lien guide vers la page retrait_produit.php. On indique que le retrait correspond à l'index auquel nous sommes (du tableau products) */
+                                    "<td><a href='retrait_produit.php?retrait='".$ref."'>Supprimer</a></td>",
                                 "</tr>";
+                            $ref = $index;
                             $totalGeneral += $product['total'];
                         }
                         echo    "<tr id='general'>",
