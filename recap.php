@@ -48,9 +48,9 @@
                                     "<td>".$product['qtt']."</td>",
                                     "<td>".number_format($product['total'], 2, ",", "&nbsp;")."&nbsp;€</td>",
                                     /* La référence du lien guide vers la page retrait_produit.php. On indique que le retrait correspond à l'index auquel nous sommes (du tableau products) */
-                                    "<td><a href='retrait_produit.php?retrait='".$ref."'>Supprimer</a></td>",
+                                    "<td><a href='retrait_produit.php?retrait=".$ref."'>Supprimer</a></td>",
                                 "</tr>";
-                            $ref = $index;
+
                             $totalGeneral += $product['total'];
                         }
                         echo    "<tr id='general'>",
@@ -60,7 +60,7 @@
                                     "<td><strong>".number_format($totalGeneral, 2, ",", "&nbsp;")."&nbsp;€</strong></td>",
                                 "</tr>",
                                 "<tr>",
-                                    "<td colspan>Nombre de produits : </td>",
+                                    "<td colspan=4> Nombre de produits : </td>",
                                     "<td>".$nombreProduits."</td>",
                                 "</tr>",
                             "</tbody>",
