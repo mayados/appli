@@ -63,6 +63,9 @@
                                     "<td colspan=4> Nombre de produits : </td>",
                                     "<td>".$nombreProduits."</td>",
                                 "</tr>",
+                                "<tr>",
+                                    "<td><a href='retrait_tous_produits.php'>Supprimer tous les produits</a></td>",
+                                "</tr>",
                             "</tbody>",
                             "</table>";
                     }
