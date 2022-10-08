@@ -13,7 +13,6 @@
     <title>Accueil</title>
 </head>
 <body>
-    
     <div id="container-page">
     <h1>Ajouter un nouveau produit</h1>
         <section id="formulaire">
@@ -43,8 +42,13 @@
                     <label>
                         <p>Nombre de produits actuels : 
                             <?php
-                                       $nombreProduits = count($_SESSION['products']); 
-                                echo " ".$nombreProduits.""
+                            
+                                $nombreProduits = $_SESSION['products']; 
+                                if(count($nombreProduits) > 0){
+                                    echo " ".count($nombreProduits)."";
+                                } else{
+                                    echo "0";
+                                }
                             ?>
                         </p>
                     </label>
