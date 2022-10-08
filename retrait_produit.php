@@ -5,7 +5,7 @@ session_start();
 /* index du produit à retirer */
  $ref = $_GET['retrait'];
 
- /* Retirer l'élément du tableau products de SESSION */
+ /* DETRUIT le tableau du produit situé à l'index précisé */
  unset($_SESSION['products'][$ref]);
 
 
