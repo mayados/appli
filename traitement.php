@@ -6,7 +6,6 @@
     $action = $_GET["action"];
     /* Pour éviter des erreurs, on vérifie s'il y a bien la valeur à la variable ref / les  ":" signifient que s'il n'y a pas on met rien */
     $ref = (isset($_GET['ref'])) ? $_GET['ref'] : "";
-    $quantite = (isset($_GET['quantite'])) ? $_GET['quantite'] : "";
     
     /* Si un produit est ajouté.. */
     switch($action) {
@@ -48,9 +47,9 @@
         break;
 
         case "augmenterQuantite":
-            $quantite = $quantite+1;
-            echo $quantite;
-            // header("Location:recap.php");
+            /* IL FAUT PRECISER OBLIGATOIREMENT L INDEX DU PRODUIT QUE L4ON VEUT AUGMENTER */
+            $_SESSION['products'][$ref]["qtt"]++;
+            header("Location:recap.php");
         break;
 
         case "baisserQte":
