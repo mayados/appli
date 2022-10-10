@@ -49,11 +49,19 @@
         case "augmenterQuantite":
             /* IL FAUT PRECISER OBLIGATOIREMENT L INDEX DU PRODUIT QUE L4ON VEUT AUGMENTER */
             $_SESSION['products'][$ref]["qtt"]++;
+            /* On dit que le total des produits pour cet index est égal à la quantité de cet index multiplié au prix affiché dans cet index */
+            $_SESSION['products'][$ref]["total"] =  $_SESSION['products'][$ref]["qtt"] *  $_SESSION['products'][$ref]["price"];
             header("Location:recap.php");
         break;
 
-        case "baisserQte":
-
+        case "baisserQuantite":
+            /* Il faut supprimer le produit quand la quantité est inférieure à 1 */
+            if($_SESSION['products'][$ref]["qtt"] > 1){
+                $_SESSION['products'][$ref]["qtt"]--;
+            }else {
+                unset($_SESSION['products'][$ref]);   
+            }
+            header("Location:recap.php");            
         break;
 
         case "suppprimerProduit":
