@@ -8,6 +8,10 @@
 }
 
 
+a {
+    text-decoration: none;
+}
+
 #container-page {
     background-color: rgb(210, 210, 226);
     height: 100vh;
@@ -83,6 +87,20 @@ h1 {
     width: 20%;
     text-align: center;
     font-size: 1.05rem;
+}
+
+#tableau-recap #quantite-produit{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+#tableau-recap #quantite-produit a {
+    color: black;
+}
+
+#tableau-recap #quantite-produit a:hover {
+    color: white;
 }
 
 #tableau-recap #general {
