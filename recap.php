@@ -52,7 +52,6 @@
                                     /* La référence du lien guide vers la page retrait_produit.php. On indique que le retrait correspond à l'index auquel nous sommes (du tableau products) */
                                     "<td><a href='traitement.php?action=suppprimerProduit&ref=$index'>Supprimer</a></td>",
                                 "</tr>";
-                                var_dump($quantiteProduit);
 
                             $totalGeneral += $product['total'];
                         }
