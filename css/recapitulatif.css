@@ -10,6 +10,7 @@
 
 a {
     text-decoration: none;
+    color: black;
 }
 
 #container-page {
@@ -95,9 +96,6 @@ h1 {
     gap: 10px;
 }
 
-#tableau-recap #quantite-produit a {
-    color: black;
-}
 
 #tableau-recap #quantite-produit a:hover {
     color: white;
@@ -117,8 +115,7 @@ h1 {
     font-size: 1.3rem;
 }
 
-#tableau-recap #total-g {
-    /* Pour qu'il occupe tout l'espace non alloué disponible */
+#tableau-recap #supp-produits {
     flex-grow: 1;
 }
 

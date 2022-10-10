@@ -1,6 +1,7 @@
 <?php
     /* Permet de démarrer une session sur le serveur pour l'utilisateur courant, ou la récupérer s'il en avait déjà une */
     session_start();
+    require('functions.php');
 
     /* On a indiqué dans index que le mot clé pour récupérer action s'appelle "action"*/
     $action = $_GET["action"];
@@ -32,6 +33,11 @@
                     /* On enregistre le produit en session */
                     /* On appelle le tableau session fournit par php, on y indique un clé "products" */
                     $_SESSION['products'][] = $product;
+                    
+                    $_SESSION['succes'] = "<div id='succes'>Le produit a été ajouté avec succès</div>";
+
+                    $_SESSION['supprime'] = "<div>Le produit a été supprimé</div>";
+                    
                 }
             }
 
@@ -67,6 +73,7 @@
 
         case "suppprimerProduit":
             unset($_SESSION['products'][$ref]);
+            $_SESSION['message'] = "<div>Le produit a été supprimé</div>" ;        
             header("Location:recap.php");
         break;
     }

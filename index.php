@@ -2,6 +2,8 @@
 <?php
     /* Il faut avoir accès au tableau $_SESSION pour connaître le nombre de produits actuels */
     session_start();
+    require('functions.php');
+    succes();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,19 +22,19 @@
                 <p>
                     <label>
                         <p class="label-p">Nom du produit :</p>
-                        <input type="text" name="name">
+                        <input required type="text" name="name">
                     </label>
                 </p>
                 <p>
                     <label>
                         <p class="label-p">Prix du produit :</p>
-                        <input type="number" step="any" name="price">
+                        <input required type="number" step="any" name="price" min=0>
                     </label>
                 </p>
                 <p>
                     <label>
                         <p class="label-p">Quantité désirée :</p>
-                        <input type="number" name="qtt" value="1" min=1>
+                        <input required type="number" name="qtt" value="1" min=1>
                     </label>
                 </p>
                 <p>

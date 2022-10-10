@@ -1,6 +1,8 @@
 <!-- Pour cette page, nous avons besoin de parcourir le tableau session. Il faut donc d'abord récupérer la session de l'utilisateur  -->
 <?php
     session_start();
+    require('traitement.php');
+    showMessage();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -62,11 +64,11 @@
                                     "<td><strong>".number_format($totalGeneral, 2, ",", "&nbsp;")."&nbsp;€</strong></td>",
                                 "</tr>",
                                 "<tr>",
-                                    "<td colspan=4> Nombre de produits : </td>",
+                                    "<td id='nb-produits'colspan=4> Nombre de produits : </td>",
                                     "<td>".$nombreProduits."</td>",
                                 "</tr>",
                                 "<tr>",
-                                    "<td><a href='traitement.php?action=viderPanier'>Supprimer tous les produits</a></td>",
+                                    "<td id='supp-produits'><a href='traitement.php?action=viderPanier'>Supprimer tous les produits</a></td>",
                                 "</tr>",
                             "</tbody>",
                             "</table>";
