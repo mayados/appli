@@ -32,7 +32,7 @@
                 <p>
                     <label>
                         <p class="label-p">Quantité désirée :</p>
-                        <input type="number" name="qtt" value="1">
+                        <input type="number" name="qtt" value="1" min=1>
                     </label>
                 </p>
                 <p>
@@ -43,12 +43,17 @@
                         <p>Nombre de produits actuels : 
                             <?php
                             
-                                $nombreProduits = $_SESSION['products']; 
-                                if(count($nombreProduits) > 0){
+                               
+                                if(isset($_SESSION['products'])){
+                                    /* Déclarer la variable ici et non en dehors de la condition, sinon cela fera undefined */
+                                    $nombreProduits = $_SESSION['products']; 
                                     echo " ".count($nombreProduits)."";
                                 } else{
                                     echo "0";
                                 }
+
+
+       
                             ?>
                         </p>
                     </label>
