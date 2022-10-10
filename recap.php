@@ -47,7 +47,7 @@
                                     /* On modifie l'affichage du prix avec number_format */
                                     "<td>".number_format($product['price'], 2, ",", "&nbsp;")."&nbsp;€</td>",
                                     "<td id='quantite-produit'>
-                                    <a href='lower_quantite.php'>-</a>".$quantiteProduit."<a href='traitement.php?action=augmenterQuantite&ref=$index'>+</a> </td>",
+                                    <a href='traitement.php?action=baisserQuantite&ref=$index'>-</a>".$quantiteProduit."<a href='traitement.php?action=augmenterQuantite&ref=$index'>+</a> </td>",
                                     "<td>".number_format($product['total'], 2, ",", "&nbsp;")."&nbsp;€</td>",
                                     /* La référence du lien guide vers la page retrait_produit.php. On indique que le retrait correspond à l'index auquel nous sommes (du tableau products) */
                                     "<td><a href='traitement.php?action=suppprimerProduit&ref=$index'>Supprimer</a></td>",
