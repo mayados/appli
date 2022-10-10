@@ -40,17 +40,19 @@
                         /* Pour chaque element product du tableau products : products correspond à l'index*/
                         foreach($_SESSION['products'] as $index => $product){
                             $ref = $index;
+                            $quantiteProduit = $product['qtt'];
                             echo "<tr>",
                                     "<td>".$index."</td>",
                                     "<td>".$product['name']."</td>",
                                     /* On modifie l'affichage du prix avec number_format */
                                     "<td>".number_format($product['price'], 2, ",", "&nbsp;")."&nbsp;€</td>",
                                     "<td id='quantite-produit'>
-                                    <a href='lower_quantite.php'>-</a>".$product['qtt']."<a href='add_quantite.php?ajout=".$qtt."'>+</a> </td>",
+                                    <a href='lower_quantite.php'>-</a>".$quantiteProduit."<a href='traitement.php?action=augmenterQuantite&quantite=$quantiteProduit'>+</a> </td>",
                                     "<td>".number_format($product['total'], 2, ",", "&nbsp;")."&nbsp;€</td>",
                                     /* La référence du lien guide vers la page retrait_produit.php. On indique que le retrait correspond à l'index auquel nous sommes (du tableau products) */
-                                    "<td><a href='retrait_produit.php?retrait=".$ref."'>Supprimer</a></td>",
+                                    "<td><a href='traitement.php?action=suppprimerProduit&ref=$index'>Supprimer</a></td>",
                                 "</tr>";
+                                var_dump($quantiteProduit);
 
                             $totalGeneral += $product['total'];
                         }
@@ -65,7 +67,7 @@
                                     "<td>".$nombreProduits."</td>",
                                 "</tr>",
                                 "<tr>",
-                                    "<td><a href='retrait_tous_produits.php'>Supprimer tous les produits</a></td>",
+                                    "<td><a href='traitement.php?action=viderPanier'>Supprimer tous les produits</a></td>",
                                 "</tr>",
                             "</tbody>",
                             "</table>";
