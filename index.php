@@ -16,7 +16,7 @@
     <div id="container-page">
     <h1>Ajouter un nouveau produit</h1>
         <section id="formulaire">
-            <form action="traitement.php" method="post">
+            <form action="traitement.php?action=ajouterProduit" method="post">
                 <p>
                     <label>
                         <p class="label-p">Nom du produit :</p>
