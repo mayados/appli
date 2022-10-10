@@ -58,6 +58,7 @@
             /* Il faut supprimer le produit quand la quantité est inférieure à 1 */
             if($_SESSION['products'][$ref]["qtt"] > 1){
                 $_SESSION['products'][$ref]["qtt"]--;
+                $_SESSION['products'][$ref]["total"] =  $_SESSION['products'][$ref]["qtt"] *  $_SESSION['products'][$ref]["price"];                
             }else {
                 unset($_SESSION['products'][$ref]);   
             }
