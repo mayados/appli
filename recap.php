@@ -1,7 +1,7 @@
 <!-- Pour cette page, nous avons besoin de parcourir le tableau session. Il faut donc d'abord récupérer la session de l'utilisateur  -->
 <?php
     session_start();
-    require('traitement.php');
+    require('functions.php');
     showMessage();
 ?>
 <!DOCTYPE html>
