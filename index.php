@@ -1,9 +1,10 @@
 
 <?php
+
     /* Il faut avoir accès au tableau $_SESSION pour connaître le nombre de produits actuels */
     session_start();
     require('functions.php');
-    succes();
+    showMessage();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,7 +45,6 @@
                     <label>
                         <p>Nombre de produits actuels : 
                             <?php
-                            
                                
                                 if(isset($_SESSION['products'])){
                                     /* Déclarer la variable ici et non en dehors de la condition, sinon cela fera undefined */
@@ -53,9 +53,6 @@
                                 } else{
                                     echo "0";
                                 }
-
-
-       
                             ?>
                         </p>
                     </label>
