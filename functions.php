@@ -15,12 +15,10 @@ function showMessage(){
 
     if(isset($_SESSION['message'])){
         $message = $_SESSION['message'];        
-         echo $message;  
-         unset($_SESSION['message']);          
-    } else{
-        echo "";
-    }
-    header("refresh: 10");
+        echo $message;  
+        unset($_SESSION['message']);
+        header("Refresh:3");     
+    } 
 }
 
 
