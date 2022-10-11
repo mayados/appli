@@ -1,0 +1,20 @@
+#succes {
+    background-color: rgb(21, 176, 21);
+    color: white;
+    text-align: center;
+    width: 100%;
+}
+
+#produit-sup {
+    background-color: red;
+    color: white;
+    width: 100%;
+    text-align: center;
+}
+
+#panier-sup {
+    background-color: rgb(120, 27, 27);
+    color: white;
+    width: 100%;
+    text-align: center; 
+}
