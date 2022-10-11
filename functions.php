@@ -20,6 +20,7 @@ function showMessage(){
     } else{
         echo "";
     }
+    header("refresh: 10");
 }
 
 
