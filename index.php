@@ -54,7 +54,6 @@
                                 } else{
                                     echo "0";
                                 }
-
                             ?>
                         </p>
                     </label>
