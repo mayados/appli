@@ -15,7 +15,7 @@
               /* Vérifier si la clé "submit" correspond bien à l'attribut "name" du bouton du formulaire : cela limite l'accès à traitement.php. Seules les requêtes HTTP provenant de la soumission de notre formulairesont acceptées */
             if(isset($_POST['submit'])){
                 /* Vérification de l'intégralité des valeurs transmises dans le tableau $_POST en fonction de celles que nous attendons */
-                $name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_STRING);
+                $name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_SPECIAL_CHARS);
                 $price = filter_input(INPUT_POST, "price", FILTER_VALIDATE_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
                 $qtt = filter_input(INPUT_POST, "qtt", FILTER_VALIDATE_INT);
 
@@ -34,11 +34,9 @@
                     /* On appelle le tableau session fournit par php, on y indique un clé "products" */
                     $_SESSION['products'][] = $product;
                     
-                    $_SESSION['message'] = "<div id='succes'>Le produit a été ajouté avec succès</div>";
+                    $_SESSION['message'] = "<div id='succes'>Le produit $name a été ajouté avec succès</div>";
 
                     
-                }else{
-                    $_SESSION['message'] = "<div id='error'>Erreur, veuillez ressaisir des données correctes</div>";
                 }
             }
 
