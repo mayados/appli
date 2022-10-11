@@ -34,10 +34,11 @@
                     /* On appelle le tableau session fournit par php, on y indique un clé "products" */
                     $_SESSION['products'][] = $product;
                     
-                    $_SESSION['succes'] = "<div id='succes'>Le produit a été ajouté avec succès</div>";
+                    $_SESSION['message'] = "<div id='succes'>Le produit a été ajouté avec succès</div>";
 
-                    $_SESSION['supprime'] = "<div>Le produit a été supprimé</div>";
                     
+                }else{
+                    $_SESSION['message'] = "<div id='error'>Erreur, veuillez ressaisir des données correctes</div>";
                 }
             }
 
@@ -49,11 +50,12 @@
         /* On a nommé l'action "viderPanier" dans récap.php. Au cas où c'est cela, on retire tous les produits de la session et on rediirige vers la page recap.php */
         case "viderPanier":
             unset($_SESSION['products']);
+            $_SESSION['message'] = "<div id='panier-sup'>L'ensemble du panier a été supprimé</div>" ;        
             header("Location:recap.php");
         break;
 
         case "augmenterQuantite":
-            /* IL FAUT PRECISER OBLIGATOIREMENT L INDEX DU PRODUIT QUE L4ON VEUT AUGMENTER */
+            /* IL FAUT PRECISER OBLIGATOIREMENT L INDEX DU PRODUIT QUE L'ON VEUT AUGMENTER */
             $_SESSION['products'][$ref]["qtt"]++;
             /* On dit que le total des produits pour cet index est égal à la quantité de cet index multiplié au prix affiché dans cet index */
             $_SESSION['products'][$ref]["total"] =  $_SESSION['products'][$ref]["qtt"] *  $_SESSION['products'][$ref]["price"];
@@ -72,8 +74,9 @@
         break;
 
         case "suppprimerProduit":
+            
             unset($_SESSION['products'][$ref]);
-            $_SESSION['message'] = "<div>Le produit a été supprimé</div>" ;        
+            $_SESSION['message'] = "<div id='produit-sup'>Le produit a été supprimé</div>" ;        
             header("Location:recap.php");
         break;
     }
