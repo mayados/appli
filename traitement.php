@@ -7,7 +7,7 @@
     $action = $_GET["action"];
     /* Pour éviter des erreurs, on vérifie s'il y a bien la valeur à la variable ref / les  ":" signifient que s'il n'y a pas on met rien */
     $ref = (isset($_GET['ref'])) ? $_GET['ref'] : "";
-    
+    $produit = (isset($_GET['produit'])) ? $_GET['produit'] : "";    
     /* Si un produit est ajouté.. */
     switch($action) {
 
@@ -73,10 +73,10 @@
             header("Location:recap.php");            
         break;
 
-        case "suppprimerProduit":
-            
+        case "suppprimerProduit":  
             unset($_SESSION['products'][$ref]);
-            $_SESSION['message'] = "<div id='produit-sup'>Le produit a été supprimé</div>" ;        
+            /* Ici, on a pu obtenir le nom du produit grace à GET plus haut (recuperation des données depuis recap.php) */
+            $_SESSION['message'] ="<div id='produit-sup'>Le produit $produit a été supprimé</div>" ;        
             header("Location:recap.php");
         break;
     }
