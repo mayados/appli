@@ -1,19 +1,25 @@
-Appli
-Context : It is an exercise from my training. I had to work with the superglobale $_SESSION for the first time and create a website where a user can
-add products,thanks to a form, with the name, the price and the quantity for each.
+# Appli
 
-This web site is made in HTML/CSS and PHP.
+Context : It is an exercise from my training. I had to work with the superglobale $_SESSION for the first time and create a website where a user can add products,thanks to a form, with the name, the price and the quantity for each.
 
-Description
-The main goals were to understand and use the superglobale $_SESSION.
 
-Features : 
+## Author
+
+- [@mayados](https://www.github.com/mayados)
+
+
+## Description
+
+The main goals were to : 
+
+- understand the superglobale $_SESSION
+- use the superglobale $_SESSION
+
+Features :
+
 - Add products
 - Consult added products in the recapitulatif's page
 - Delete a product
 - Delete all the products
 - increase the quantity
 - discrease the quantity
-
-Author
-@mayados
